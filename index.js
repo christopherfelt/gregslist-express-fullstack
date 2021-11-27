@@ -10,9 +10,9 @@ const app = express();
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use("/cars", cars);
+app.use(express.static(path.join(__dirname, 'static')))
 
-//app.use(express.static(path.join(__dirname, 'static')))
+app.use("/cars", cars);
 
 /*
 app.get('/', function (req, res) {    
